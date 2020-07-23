@@ -1,32 +1,40 @@
-<div class="search-wrap">
-  <form class="search-form"
-        [formGroup]="searchForm"
-        (ngSubmit)="getNewsByText()">
-    <mat-form-field class="search-form__field">
-      <mat-label>Search</mat-label>
-      <input matInput
-             placeholder="Eenter your search terms"
-             formControlName="searchInput">
-    </mat-form-field>
-    <button mat-raised-button
-            color="primary"
-            class="search-form__button"
-            type="submit">Go!</button>
-  </form>
+<div class="news-list-wrap">
+  <div class="search-wrap">
+    <form class="search-form"
+          [formGroup]="searchForm"
+          (ngSubmit)="getNewsByText()">
+      <mat-form-field class="search-form__field">
+        <mat-label>Search</mat-label>
+        <input matInput
+               placeholder="Eenter your search terms"
+               formControlName="searchInput">
+      </mat-form-field>
+      <button mat-raised-button
+              color="primary"
+              class="search-form__button"
+              type="submit">Go!
+      </button>
+    </form>
+  </div>
+
+  <div *ngIf="articles.length >= 1; else noNews"
+       class="news-list">
+    <app-news-card
+      *ngFor="let article of articles"
+      [article]="article">
+    </app-news-card>
+  </div>
+  <ng-template
+      #noNews>I have nothing for you ʕ ᵔᴥᵔ ʔ</ng-template>
+
+
+<!--  <mat-paginator-->
+<!--    *ngIf="articles"-->
+<!--    [length]="articles.length"-->
+<!--    #paginator-->
+<!--    [pageSize]="10"-->
+<!--    [pageSizeOptions]="[10]"-->
+<!--    class="paginator">-->
+<!--  </mat-paginator>-->
+
 </div>
-
-<div class="news-list">
-  <app-news-card
-    *ngFor="let article of articles"
-    [article]="article">
-  </app-news-card>
-</div>
-
-<mat-paginator
-  *ngIf="articles"
-  [length]="articles.length"
-  #paginator
-  [pageSize]="10"
-  [pageSizeOptions]="[10]">
-</mat-paginator>
-

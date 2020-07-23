@@ -23,14 +23,16 @@ export class NewsListComponent implements OnInit {
     this.newsApiService.getNews().subscribe((data) => {
       console.log(data);
       this.articles = data['articles'];
+      console.log(this.articles);
     });
   }
 
   getNewsByText() {
     if (this.searchForm.controls.searchInput.value) {
       this.newsApiService.getNewsByText(this.searchForm.controls.searchInput.value).subscribe((data) => {
-        console.log(data);
         this.articles = data['articles'];
+        console.log(this.articles);
+
       })
     }
   }

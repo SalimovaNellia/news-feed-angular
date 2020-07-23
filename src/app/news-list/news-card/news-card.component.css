@@ -1,6 +1,5 @@
-:host {
-  width: 60%;
-  margin: 15px auto;
+.article-preview {
+  margin-bottom: 50px;
 }
 
 .article-preview__content {

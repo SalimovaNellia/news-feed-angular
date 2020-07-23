@@ -9,6 +9,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { NewsListComponent } from './news-list/news-list.component';
 import {NewsCardComponent} from './news-list/news-card/news-card.component';
 import { HttpClientModule } from '@angular/common/http'
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,6 +11,6 @@ export class NewsApiService {
   constructor(private httpClient: HttpClient) { }
 
   public getNews() {
-    return this.httpClient.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.API_KEY}`)
+    return this.httpClient.get(`https://newsapi.org/v2/everything?sources=techcrunch&apiKey=${this.API_KEY}`)
   }
 }

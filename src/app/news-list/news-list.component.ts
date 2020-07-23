@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Article} from '../models/article.model';
+import {NewsApiService} from '../services/news-api.service';
 
 @Component({
   selector: 'app-news-list',
@@ -8,11 +9,14 @@ import {Article} from '../models/article.model';
 })
 export class NewsListComponent implements OnInit {
 
-  articles: Array<Article>;
+  public articles: Array<Article>;
 
-  constructor() { }
+  constructor(private newsApiService: NewsApiService) { }
 
   ngOnInit() {
+    this.newsApiService.getNews().subscribe((data) => {
+      console.log(data);
+      this.articles = data['articles'];
+    });
   }
-
 }

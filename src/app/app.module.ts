@@ -8,6 +8,7 @@ import {MatCardModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import { NewsListComponent } from './news-list/news-list.component';
 import {NewsCardComponent} from './news-list/news-card/news-card.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {NewsCardComponent} from './news-list/news-card/news-card.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

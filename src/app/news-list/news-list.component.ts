@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Article} from '../models/article.model';
 import {NewsApiService} from '../services/news-api.service';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-news-list',
@@ -9,14 +10,28 @@ import {NewsApiService} from '../services/news-api.service';
 })
 export class NewsListComponent implements OnInit {
 
+  constructor(private newsApiService: NewsApiService) { }
+
   public articles: Array<Article>;
 
-  constructor(private newsApiService: NewsApiService) { }
+  public searchForm = new FormGroup({
+    searchInput: new FormControl('')
+  });
+
 
   ngOnInit() {
     this.newsApiService.getNews().subscribe((data) => {
       console.log(data);
       this.articles = data['articles'];
     });
+  }
+
+  getNewsByText() {
+    if (this.searchForm.controls.searchInput.value) {
+      this.newsApiService.getNewsByText(this.searchForm.controls.searchInput.value).subscribe((data) => {
+        console.log(data);
+        this.articles = data['articles'];
+      })
+    }
   }
 }

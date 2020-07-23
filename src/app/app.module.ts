@@ -11,6 +11,7 @@ import {NewsCardComponent} from './news-list/news-card/news-card.component';
 import { HttpClientModule } from '@angular/common/http'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

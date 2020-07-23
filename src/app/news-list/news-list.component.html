@@ -1,9 +1,17 @@
 <div class="search-wrap">
-  <form class="search-form">
-    <mat-form-field class="mat-form-field">
+  <form class="search-form"
+        [formGroup]="searchForm"
+        (ngSubmit)="getNewsByText()">
+    <mat-form-field class="search-form__field">
       <mat-label>Search</mat-label>
-      <input matInput placeholder="Enter a word">
+      <input matInput
+             placeholder="Eenter your search terms"
+             formControlName="searchInput">
     </mat-form-field>
+    <button mat-raised-button
+            color="primary"
+            class="search-form__button"
+            type="submit">Go!</button>
   </form>
 </div>
 

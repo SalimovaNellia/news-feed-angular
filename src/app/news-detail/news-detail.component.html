@@ -11,5 +11,8 @@
     <p>{{selectedArticle.source.name}}</p>
     <p>{{selectedArticle.publishedAt | date}}</p>
   </div>
-  <button mat-raised-button color="primary" class="article__button">More ...</button>
+  <button (click)="goBack()"
+          class="article__button"
+          color="primary"
+          mat-raised-button>Back</button>
 </div>

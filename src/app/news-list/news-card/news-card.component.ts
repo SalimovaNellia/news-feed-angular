@@ -11,11 +11,18 @@ import {Router} from '@angular/router';
 export class NewsCardComponent implements OnInit {
 
   @Input() article: Article;
+  @Input() keyWord: string;
 
-  constructor(private newsApiService: NewsApiService,
-              private router: Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  openDetails() {
+    if (this.keyWord) {
+      this.router.navigate(['/article', this.keyWord, this.article.title])
+    } else {
+      this.router.navigate(['/article', this.article.title])
+    }
+  }
 }

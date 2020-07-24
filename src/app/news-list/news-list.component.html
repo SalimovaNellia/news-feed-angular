@@ -4,7 +4,7 @@
           [formGroup]="searchForm"
           (ngSubmit)="getNewsByText()">
       <mat-form-field class="search-form__field">
-        <mat-label>Search</mat-label>
+        <mat-label>{{keyWord || 'Search'}}</mat-label>
         <input matInput
                placeholder="Eenter your search terms"
                formControlName="searchInput">
@@ -21,7 +21,8 @@
        class="news-list">
     <app-news-card
       *ngFor="let article of articles"
-      [article]="article">
+      [article]="article"
+      [keyWord]="keyWord">
     </app-news-card>
   </div>
   <ng-template

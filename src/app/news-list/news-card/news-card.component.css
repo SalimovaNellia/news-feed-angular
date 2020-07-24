@@ -4,6 +4,7 @@
 
 .article-preview__content {
   margin: 0 16px;
+  text-align: left;
 }
 
 .article-preview__button {

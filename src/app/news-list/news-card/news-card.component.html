@@ -7,13 +7,11 @@
       class="article-preview__img"
       src="{{article.urlToImage}}"
       (click)="openDetails()">
-<!--      [routerLink]="['/article', keyWord, article.title]"-->
-    <p>{{article.description}}</p>
+    <p class="article-preview__description">{{article.description}}</p>
   </mat-card-content>
   <button mat-raised-button
           color="primary"
           class="article-preview__button"
           (click)="openDetails()">
-<!--          [routerLink]="['/article', keyWord, article.title]"-->
   More ...</button>
 </mat-card>

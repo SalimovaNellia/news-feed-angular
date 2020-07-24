@@ -13,36 +13,33 @@ export class NewsListComponent implements OnInit {
 
   constructor(private newsApiService: NewsApiService,
               private router: Router,
-              private activatedRoute: ActivatedRoute) {
-  }
+              private activatedRoute: ActivatedRoute) {}
 
-  public articles: Array<Article>;
+  public articles: Array<Article> = [];
   public keyWord: string;
 
   public searchForm = new FormGroup({
     searchInput: new FormControl('')
   });
 
-
   ngOnInit() {
+    this.getArticles();
+  }
+
+  getArticles() {
     this.activatedRoute.params.subscribe(params => {
       if (params['keyword']) {
         this.keyWord = params['keyword'];
         this.newsApiService.getNewsByText(this.keyWord).subscribe(data => {
           this.articles = data['articles'];
-          console.log(this.articles);
         });
       } else {
         this.newsApiService.getNews().subscribe((data) => {
           this.articles = data['articles'];
-          console.log(this.articles);
         });
       }
     });
-
-
   }
-
 
   getNewsByText() {
     if (this.searchForm.controls.searchInput.value) {
@@ -50,6 +47,13 @@ export class NewsListComponent implements OnInit {
         this.articles = data['articles'];
         this.router.navigate(['news', this.searchForm.controls.searchInput.value]);
       });
+    } else {
+      this.router.navigate(['/news']);
     }
+  }
+
+  resetKeyWord() {
+    this.keyWord = '';
+    this.router.navigate(['/news'])
   }
 }

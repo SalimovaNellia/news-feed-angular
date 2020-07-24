@@ -1,4 +1,4 @@
-.news-list-wrap {
+.news-container {
   max-width: 900px;
   margin: 0 auto;
 }
@@ -26,4 +26,12 @@
 .search-form__field {
   width: 80%;
   margin-right: 30px;
+}
+
+.search-form__button {
+  margin: 0 15px;
+}
+
+.news-list-wrap {
+  text-align: center;
 }

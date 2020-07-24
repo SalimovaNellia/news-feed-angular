@@ -22,7 +22,7 @@ export class NewsCardComponent implements OnInit {
     if (this.keyWord) {
       this.router.navigate(['/article', this.keyWord, this.article.title])
     } else {
-      this.router.navigate(['/article', this.article.title])
+      this.router.navigate(['/article', this.article.title]);
     }
   }
 }

@@ -1,0 +1,11 @@
+<mat-card class="article">
+  <mat-card-header>
+    <mat-card-title class="article__title">{{selectedArticle.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="article__content">
+    <img class="article__img"
+         src="{{selectedArticle.urlToImage}}">
+    <p>{{selectedArticle.content}}</p>
+  </mat-card-content>
+  <button mat-raised-button color="primary" class="article__button">More ...</button>
+</mat-card>

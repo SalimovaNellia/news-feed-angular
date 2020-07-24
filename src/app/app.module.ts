@@ -12,12 +12,14 @@ import { HttpClientModule } from '@angular/common/http'
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
+import { NewsDetailComponent } from './news-detail/news-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsListComponent,
-    NewsCardComponent
+    NewsCardComponent,
+    NewsDetailComponent
   ],
   imports: [
     BrowserModule,

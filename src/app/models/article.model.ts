@@ -4,4 +4,9 @@ export class Article {
   description: string;
   content: string;
   publishedAt: Date;
+  author: string;
+  source: {
+    id: string,
+    name: string
+  }
 }

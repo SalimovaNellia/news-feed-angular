@@ -1,0 +1,29 @@
+.article {
+  padding: 20px;
+}
+.article__title {
+  margin: 30px 15px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.article__content {
+  font-size: 16px;
+}
+
+.article__img-wrap {
+  margin: 35px auto;
+  width: 70%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.article__img {
+  width: 100%;
+}
+
+.article__info {
+  margin: 10px;
+  font-size: 14px;
+  text-align: right;
+}

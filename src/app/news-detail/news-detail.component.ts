@@ -23,6 +23,7 @@ export class NewsDetailComponent implements OnInit {
       this.selectedTitle = params['title'];
       this.newsApiService.getArticleByTitle(this.selectedTitle).subscribe(data => {
         this.selectedArticle = data['articles'][0];
+        console.log(this.selectedArticle);
       });
     });
   }

@@ -1,10 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Article} from '../models/article.model';
+import {Article} from '../model/article.model';
 import {ActivatedRoute, Router} from '@angular/router';
-import {filter} from 'rxjs/operators';
 import {NewsApiService} from '../services/news-api.service';
 import {Subscription} from 'rxjs';
-import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-news-detail',

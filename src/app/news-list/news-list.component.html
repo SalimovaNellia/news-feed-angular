@@ -23,29 +23,28 @@
   </div>
 
 
-<div class="news-list-wrap">
-  <div *ngIf="articles.length >= 1; else noNews"
-       class="news-list">
-    <app-news-card
-      *ngFor="let article of articles"
-      [article]="article"
-      [keyWord]="keyWord">
-    </app-news-card>
+  <div class="news-list-wrap">
+    <div *ngIf="articles.length >= 1; else noNews"
+         class="news-list">
+      <app-news-card
+        *ngFor="let article of articles"
+        [article]="article"
+        [keyWord]="keyWord">
+      </app-news-card>
+    </div>
+
+    <ng-template
+        #noNews>I have nothing for you ʕ ᵔᴥᵔ ʔ
+    </ng-template>
   </div>
 
-  <ng-template
-      #noNews>I have nothing for you ʕ ᵔᴥᵔ ʔ
-  </ng-template>
-</div>
 
+  <mat-paginator
+    *ngIf="articlesAmount"
+    [length]="articlesAmount"
+    [pageSize]="articlesPerPage"
+    (page)="pageEvents($event)">
 
-  <!--  <mat-paginator-->
-  <!--    *ngIf="articles"-->
-  <!--    [length]="articles.length"-->
-  <!--    #paginator-->
-  <!--    [pageSize]="10"-->
-  <!--    [pageSizeOptions]="[10]"-->
-  <!--    class="paginator">-->
-  <!--  </mat-paginator>-->
+  </mat-paginator>
 
 </div>

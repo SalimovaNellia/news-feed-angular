@@ -21,9 +21,8 @@ export class NewsListComponent implements OnInit {
   }
 
   public articles: Array<Article> = [];
-
   public keyWord: string;
-  private articlesAmount: number;
+  public articlesAmount: number;
   public pageIndex: number = 1;
   public articlesPerPage: number = 10;
 
